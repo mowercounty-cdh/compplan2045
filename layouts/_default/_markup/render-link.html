@@ -1,0 +1,5 @@
+{{- $d := .Destination -}}
+{{- $internal := not (or (hasPrefix $d "http") (hasPrefix $d "mailto:") (hasPrefix $d "tel:") (hasPrefix $d "#")) -}}
+{{- $ext := or (hasPrefix $d "http") (hasSuffix (lower $d) ".pdf") -}}
+{{- if $internal -}}{{- $d = $d | strings.TrimPrefix "/" | relURL -}}{{- end -}}
+<a href="{{ $d }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $ext }} target="_blank" rel="noopener"{{ end }}>{{ .Text | safeHTML }}</a>

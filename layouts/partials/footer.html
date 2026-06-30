@@ -1,0 +1,18 @@
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Comprehensive Plan 2045</strong><br>
+      Mower County &amp; the City of Austin, Minnesota
+    </div>
+    <nav class="footer-nav" aria-label="Footer">
+      <ul>
+        {{ range .Site.Menus.main }}<li><a href="{{ .URL }}">{{ .Name }}</a></li>{{ end }}
+      </ul>
+    </nav>
+    <div class="footer-meta">
+      <a href="https://www.ci.austin.mn.us/" target="_blank" rel="noopener">City of Austin</a> ·
+      <a href="https://co.mower.mn.us/" target="_blank" rel="noopener">Mower County</a>
+      <p>&copy; {{ now.Year }} Mower County &amp; City of Austin. Archived &amp; rebuilt copy.</p>
+    </div>
+  </div>
+</footer>

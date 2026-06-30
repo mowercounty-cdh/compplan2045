@@ -1,0 +1,3 @@
+{{- $u := .Destination -}}
+{{- if not (hasPrefix $u "http") -}}{{- $u = $u | strings.TrimPrefix "/" | relURL -}}{{- end -}}
+<img src="{{ $u }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }} loading="lazy">

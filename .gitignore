@@ -1,0 +1,8 @@
+/public/
+/resources/_gen/
+.hugo_build.lock
+tools/node_modules/
+scratch_*
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,17 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="container">
+    <h1 class="hero-title">{{ .Params.hero_title | default "Our future is exciting." }}</h1>
+    {{ with .Params.hero_tagline }}<p class="hero-tagline">{{ . }}</p>{{ end }}
+    <div class="hero-cta">
+      <a class="btn btn-light" href="{{ "planmc/" | relURL }}">Mower County Plan</a>
+      <a class="btn btn-light" href="{{ "planaustin/" | relURL }}">City of Austin Plan</a>
+    </div>
+  </div>
+</section>
+<article class="page container">
+  <div class="prose">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

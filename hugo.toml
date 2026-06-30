@@ -1,0 +1,24 @@
+baseURL = "https://mowercounty-cdh.github.io/compplan2045/"
+defaultContentLanguage = "en"
+title = "Comprehensive Plan 2045 — Mower County & City of Austin"
+enableRobotsTXT = true
+enableGitInfo = false
+
+[params]
+  description = "The 2045 Comprehensive Plans for Mower County and the City of Austin, Minnesota — a shared roadmap for growth, housing, transportation, and quality of life over the next 20 years."
+  logo = "/images/logo-horizontal.png"
+  tagline = "Mower County  |  City of Austin"
+
+# Allow raw HTML in Markdown (the content was migrated from Squarespace).
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+
+# "Home" menu entry; the other entries are defined in each page's front matter.
+[[menu.main]]
+  name = "Home"
+  pageRef = "/"
+  weight = 0

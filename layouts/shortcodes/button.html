@@ -1,0 +1,5 @@
+{{- $href := .Get "href" -}}
+{{- $ext := or (hasPrefix $href "http") (hasSuffix (lower $href) ".pdf") -}}
+{{- $url := $href -}}
+{{- if not (hasPrefix $href "http") -}}{{- $url = $href | strings.TrimPrefix "/" | relURL -}}{{- end -}}
+<a class="btn" href="{{ $url }}"{{ if $ext }} target="_blank" rel="noopener"{{ end }}>{{ .Inner }}</a>
