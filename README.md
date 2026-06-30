@@ -53,12 +53,33 @@ repo) into the Markdown here — pulling text, links, buttons, images, and the
 Google Drive / hosted PDFs, and rewriting every link to a local path. It's kept
 for reference; you don't need to run it again to edit the site.
 
+## Optimized assets & originals
+
+The PDFs and images served from `static/` are **compressed** versions (≈44% smaller
+overall — 338 MB → 188 MB). The full-resolution **originals are preserved in
+[`originals/`](originals/)** (documents + images), which is *not* published to the live
+site — Hugo only serves `static/`. The live links automatically point to the compressed
+copies because they share the same filenames.
+
+To re-run compression after adding new files to `static/`:
+
+```bash
+cd tools && node compress.mjs
+```
+
+This needs **Ghostscript** (PDFs, `/ebook` ~150 dpi, text preserved) and the `sharp`
+npm package (images). It compresses from the pristine `originals/`, so it's safe to
+re-run. A compressed file is kept only when it's actually smaller; page counts are
+unchanged. (Full-resolution originals also live in the `compplan2045-archive` repo.)
+
 ## Structure
 
 ```
 content/            Markdown pages (edit these)
 layouts/            Custom theme (templates, partials, shortcodes, render hooks)
 assets/css/main.css Brand styles
-static/             Logo, favicon, images, documents
+static/             Logo, favicon, images, documents  (compressed, served)
+originals/          Full-resolution originals (preserved, NOT published)
+tools/              extract.mjs (content seeding) + compress.mjs (asset optimization)
 hugo.toml           Site config + main menu
 ```
