@@ -40,6 +40,23 @@ a:hover { color: var(--green-dark); }
 }
 .skip-link:focus { left: 8px; top: 8px; }
 
+/* ---------- Language / translate bar ---------- */
+.lang-bar { background: var(--navy-deep); color: #fff; font-size: 0.85rem; }
+.lang-bar-inner { display: flex; align-items: center; justify-content: flex-end; gap: 10px; min-height: 40px; }
+.lang-label { opacity: 0.85; }
+#google_translate_element { display: inline-flex; align-items: center; line-height: 1; }
+/* compact, themed dropdown */
+.goog-te-gadget { font-size: 0 !important; }
+.goog-te-gadget .goog-te-combo {
+  font-size: 0.85rem; margin: 0 !important; padding: 5px 8px; border-radius: 6px;
+  border: 1px solid rgba(255,255,255,.35); background: #fff; color: var(--ink); cursor: pointer;
+}
+/* suppress Google's injected top banner and the body offset it forces */
+.goog-te-banner-frame.skiptranslate, .goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; position: static !important; }
+#goog-gt-tt, .goog-te-balloon-frame { display: none !important; }
+.goog-text-highlight { background: none !important; box-shadow: none !important; }
+
 /* ---------- Header / nav ---------- */
 .site-header {
   position: sticky; top: 0; z-index: 50;

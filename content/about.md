@@ -13,8 +13,6 @@ Scroll down to learn more about comprehensive plans.
 
 {{< button href="/planmc/" >}}Mower County Comprehensive Plan{{< /button >}}
 
-**Translate. Traducir. txhais. turjumid.** Select your language preference:
-
 ## NEWS AND UPDATES
 
 ### **NEW!** **The City Plan is Adopted**
